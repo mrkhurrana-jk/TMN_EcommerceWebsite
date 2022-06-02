@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+#overlay, #seller-overlay
+{
+	display: none;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: all .2s linear;
+}
+
+#overlay, #seller-overlay{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/* body{
+    background-color: whitesmoke;
+} */
+.productsMain{
+    overflow: hidden;
+    width: 93%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+.productsMain .prodctsMainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+    padding: .6rem .5rem;
+    position: relative;
+    background-color: white;
+    margin-bottom: .8rem;
+    overflow: hidden;
+    margin-top: 6rem;
+}
+.productsMain .prodctsMainContainer .productsLeftSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 39%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    margin-right: .8rem;
+}
+
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageContainer{
+    width: 100%;
+    height: 75vh;
+    position: relative;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageContainer .productLeftImg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageGallery{
+    width: 100%;
+    margin: .8rem 0;
+    position: relative;
+    display: flex;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageGallery .productLeftImageGalleryContainer{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    margin-right: .8rem;
+    background-color: white;
+    /* object-fit: contain; */
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageGallery .productLeftImageGalleryContainer .productLeftImageItems{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.29;
+    cursor: pointer;
+    color: white;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productLeftImageGallery .productLeftImageGalleryContainer .productLeftImageItems:hover{
+    opacity: 1;
+    /* border: 1px solid orangered; */
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer{
+    border-top: 1px solid rgba(0,0,0,0.13);
+    border-bottom: 1px solid rgba(0,0,0,0.13);
+    padding: .9rem 0;
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: .8rem 0;
+    padding: .2rem .6rem;
+    margin-bottom: .9rem;
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsHeader .pdhTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    columns: black;
+
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsHeader .pdhPlus{
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsInformation{
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    display: none;
+    padding: .2rem .9rem;
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsInformation.active{
+    display: block;
+}
+.productsMain .prodctsMainContainer .productsLeftSection  .productDetailsContainer .productDetailsInformation .pColorConer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5rem 0;
+
+}
+.productsMain .prodctsMainContainer .productsLeftSection .productDetailsContainer .productDetailsInformation .pColorConer .pColor{
+    font-size: .93rem;
+    color: #878787;
+    font-weight: 550px;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer{
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: space-between;  */
+    position: relative;
+    /* align-items: flex-start; */
+    width: 100%;
+    padding: 1.5rem .3rem;
+    margin-top: .8rem;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    /* height: 250px;
+    overflow-y: scroll; */
+    overflow-x: hidden;
+    margin-left: .2rem;
+    width: 100%;
+    flex-grow: 1;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews.crReviewActive{
+    height: 250px;
+    overflow-y: scroll;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .diddd{
+    display: none;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .diddd.dAnchorActive{
+    display: block;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews::-webkit-scrollbar{
+    width: 6px;
+    height: 2px;
+    border: 1px solid rgba(0,0,0,0.2);
+    
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,0.3);
+}
+/* .productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crTitle{
+    
+
+} */
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crTitle .crtittle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; 
+     margin-bottom: .6rem; 
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview{
+    width: 100%;
+    display: none;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview.reviewDropActive{
+    display: block;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: .6rem .4rem;
+} 
+
+
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crReviewTitle{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crReviewTitle .crRatngStar{
+    background-color:#14958F;
+    color: white;
+    font-size: .81rem;
+    padding: 0;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crReviewTitle .crRatngReviw{
+    font-size: .95rem;
+    margin-left: .5rem;
+    opacity: 0.93;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crlikesDisklikes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .23rem;
+    min-width: 100%;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crlikesDisklikes .crlikeDislkeTitle{
+    font-size: .85rem;
+    opacity: 0.8;
+    padding-left: 2.6rem;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crlikesDisklikes .crlkdkContainer{
+    display: flex;
+}
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crlikesDisklikes .crlkdkLeft{
+    display: flex;
+    justify-content: center;
+    width: 60px;
+}
+
+.productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crMainReview .crReviewContainer .crlikesDisklikes .crlkdkLeft .ttt{
+    padding: 0 .4rem;
+}
+.iconnnnLike{
+    cursor: pointer;
+    color: darkgreen;
+    opacity: 0.6;
+}
+.iconnnnLike:hover{
+    opacity: 1;
+}
+.iconnnnDislike{
+    color: crimson;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.iconnnnDislike{
+    opacity: 1;
+}
+
+.productsMain .prodctsMainContainer .productsRightSection{
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.productsMain .prodctsMainContainer .productsRightSection .productDetailsContainer{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.productsMain .prodctsMainContainer .productsRightSection .productDetailsContainer .productDetailTitle{
+    font-size: 1.03rem;
+    letter-spacing: .12rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productDetailsContainer .productDetailDescription{
+    font-size: .91rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productDetailsContainer .productDetailPrice{
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productDetailsContainer .productRatings .productRatingsReviews{
+    font-weight: bold;
+    color: #878787;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productColors{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 .6rem 0;
+    position: relative;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productColors .productColorImageContainer{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-right: .59rem;
+    cursor: pointer;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productColors .productColorImageContainer .productColorImage{
+    width: 100%;
+    height: 100%;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 1.5rem 0 0 0;
+    position: relative;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizeContaner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: .6rem .6rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizeContaner .psTitle{
+    font-size: 1.02rem;
+    font-weight: bold;
+
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizesContainer{
+    display: flex;
+    flex-direction: row;
+    gap: .6rem;
+    margin-left: .8rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .producSizesContainer{
+    width: 100%;
+    height: 250px;
+    z-index: 19;
+    position: absolute;
+    top: 44px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: .5rem 0;
+    overflow-y: scroll;
+    display: none;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .producSizesContainer.activeSize{
+    display: block;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .producSizesContainer .productSizeItem{
+    font-size: 1.2rem;
+    margin: .6rem 0;
+    padding: .5rem .5rem;
+    cursor: pointer;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .producSizesContainer .productSizeItem:hover{
+    background-color: black;
+    color: white;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizesContainer .pSize{
+    font-size: 1.2rem;
+    padding: .46rem;
+    min-width: 46px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizesContainer .pSize:hover{
+    color: blue;
+    border: 1px solid blue;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productSize .productSizesContainer .pSize.sizeActive{
+    color: blue;
+    border:  1px solid blue;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 1.7rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeLocationContainerWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-bottom: .7rem; */
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeLocationContainerWrap .pinCodeLocationImgContainer{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    margin-right: .8rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeLocationContainerWrap .pinCodeLocationImgContainer .pinCodeLocationImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeLocationContainerWrap .pinCodeDeliverTitle{
+    font-size: .91rem;
+    color: #878787;
+    font-weight: bold;
+    padding-top: .7rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeCheckerContainer{
+    position: relative;
+    width: 85%;
+    display: flex;
+    padding: 2rem 0 .4rem 0;
+    border-bottom: 1px solid rgba(0,0,0,.16);
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeCheckerContainer .pinCodeCheckerField{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100%;
+    /* border: none; */
+    outline: none;
+    border: 0px solid white;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeCheckerContainer .pinCodeCheckerButton{
+    position: absolute;
+    width: 20%;
+    right: 0;
+    bottom: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin-bottom: .5rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeDeliverDetails{
+    font-size: .88rem;
+    font-weight: bold;
+    margin-top: .3rem;
+
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeDeliverDetails .freegreen{
+    color: #388E3C;
+    font-weight: bold;
+}
+.productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer .pinCodeDeliverDetails .freegreen .pri{
+    text-decoration: line-through;
+    color: #878787;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer{
+    display: flex;
+    flex-direction: row;
+    margin: .9rem 0 0 0 ;
+    position: relative;
+    align-items: flex-start;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagContnerInner{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    margin-right: .5rem;
+    /* margin-right: auto; */
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagCTop{
+    background-color: black;
+    position: relative;
+    padding: .5rem .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagCTop .productBagTitle{
+    font-size: 1.02rem;
+    color: white;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagBottom{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 4.8rem 0 0 0 ;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagBottom .productBagLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 .4rem;
+    margin-right: .3rem;
+    width: 30%;
+} 
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagBottom .productBagLogo .productBagDescript{
+    font-size: .91rem;
+   text-align: center;
+   margin-top: .6rem;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .ccchfive .chefd{
+    font-size: 1.7rem;
+    color: white;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .ccchfive .chefd:hover{
+    color: crimson;
+}
+.productsMain .prodctsMainContainer .productsRightSection .productBagContainer .ccchfive .chefd.heartActive{
+    color: red;
+}
+
+@media (min-width:250px) and (max-width: 600px){
+    .productsMain{
+        width: 96%;
+    }
+    .productsMain .imageSlider{
+        display: none;
+    }
+    .productsMain .prodctsMainContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection{
+        width: 100%;
+        
+    } 
+    .productsMain .prodctsMainContainer .productsLeftSection .productLeftImageContainer {
+        min-height:250px;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection .productDetailsContainer .productDetailsInformation{
+        width: 75%;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crTitle .change{
+        margin-left: 0;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection{
+        width: 100%;
+        padding: .8rem 0 0 0;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .productSize{
+        width: 97%;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer {
+        width: 100%;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagContnerInner{
+        width: 85%;
+    }
+   
+}
+@media (min-width: 600px) and (max-width:1000px){
+    .productsMain{
+        width: 96%;
+    }
+    .productsMain .imageSlider{
+        display: none;
+    }
+    .productsMain .prodctsMainContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection{
+        width: 100%;
+        
+    } 
+    .productsMain .prodctsMainContainer .productsLeftSection .productLeftImageContainer {
+        min-height:250px;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection .productDetailsContainer .productDetailsInformation{
+        width: 75%;
+    }
+    .productsMain .prodctsMainContainer .productsLeftSection .raReviwContainer .customerReviews .crTitle .change{
+        margin-left: 0;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection{
+        width: 100%;
+        padding: .8rem 0 0 0;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .productSize{
+        width: 93%;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .pinCodeChecker .pinCodeLocationContainer {
+        width: 80%;
+    }
+    .productsMain .prodctsMainContainer .productsRightSection .productBagContainer .productBagContnerInner{
+        width: 85%;
+    }
+}
+@media (min-width:1000px) and (max-width:1200px){
+    
+}  
