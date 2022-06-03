@@ -7,89 +7,133 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/seller.css">
+    <!-- <link rel="stylesheet" href="./styles/sideNav.css">  -->
     <title>Seller Dashboard</title>
 </head>
 
 <body>
 
-    <!-- navbar -->
-    <nav class="navigation">
-        <div class="wrap">
-            <div class="navLogo">
-                <i class="fa fa-bars ba" id="open" onclick="openSideNav()"></i>
-                <i class="fa fa-times ca" id="close" onclick="closeSideNav()"></i>
-                <a href="index.html" class="logo">LOGO</a>
-            </div>
+   <!-- navbar -->
+   <nav class="navigation">
+    <div class="wrap">
+      <div class="navLogo">
+        <i class="fa fa-bars ba" id="open" onclick="openSideNav()"></i>
+        <i class="fa fa-times ca" id="close" onclick="closeSideNav()"></i>
+        <a href="index.html" class="logo">LOGO</a>
+      </div>
 
 
-            <div class="menu-sec">
-                <ul class="menu">
-                    <li class="dropdown">
-                        <a href="#">MEN</a>
-                        <div class="dropdown-content">
-                            <a href="#">New Now</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Accesories</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">WOMEN</a>
-                        <div class="dropdown-content">
-                            <a href="#">New Now</a>
-                            <a href="#">Clothing</a>
-                            <a href="#">Accesories</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">TEENS</a>
-                        <div class="dropdown-content">
-                            <a href="teens.html">Teen Boy</a>
-                            <a href="teens.html">Teen Girls</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">KIDS</a>
-                        <div class="dropdown-content">
-                            <a href="kids.html">Girls</a>
-                            <a href="kids.html">Boys</a>
-                            <a href="kids.html">New Born</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="right-elements" id="right">
-                <!-- <a href="#" class="searchbox" id="searchbox"> -->
-                <!-- <div class="search" id="searchbox">
-                    <input type="search" placeholder="search" /> -->
-                    <!-- <label for="search" class="fa fa-search"></label> -->
-                <!-- </div> -->
-                <!-- <i class="fa fa-search" id="search"></i> -->
-                <!-- </a> -->
-                <a href="#" class="wishlist">
-                    <i class="fa-solid fa-heart" id="wish"></i>
-                </a>
-                <a href="cart-item.html" class="cart">
-                    <i class="fa-solid fa-bag-shopping" id="cart"></i>
-                </a>
-                <a href="#" class="user">
-                    <div class="fa-solid fa-user dropdown" id="user"></div>
-                </a>
-                <div class="dropdown-content user-drop" id="user-drop">
+      <div class="right-elements" id="right">
+        <a href="#" class="searchbox" id="searchbox">
+          <div class="search" id="searching">
+              <input id = "searchbox" type="search" placeholder="search"/>
+          </div>
+          <i class="fa fa-search search-icon" id="search"></i>
+      </a>
+      <a href="#" class="wishlist">
+        <i class="fa-solid fa-heart" id="wish"></i>
+    </a>
+    <a href="cart-item.html" class="cart">
+        <i class="fa-solid fa-bag-shopping" id="cart"></i>
+    </a>
+    <a href="#" class="user">
+        <div class="fa-solid fa-user dropdown" id="user"></div>
+    </a>
+    <div class="dropdown-content user-drop" id="user-drop">
                     <a href="cart-item.html">Your Cart</a>
                     <a href="userDashboard.html">Account</a>
                     <a href="product.html">Orders</a>
                 </div>
-            </div>
-        </div>
+</div>
+</div>
+      
 
-        
+      <div class="menu-sec">
+        <ul class="menu">
+          <li class="dropdown">
+            <a href="#">MEN</a>
+            <div class="dropdown-content">
+              <a href="teens.html">New Now</a>
+              <a href="teens.html">Clothing</a>
+              <a href="teens.html">Accesories</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">WOMEN</a>
+            <div class="dropdown-content">
+              <a href="teens.html">New Now</a>
+              <a href="teens.html">Clothing</a>
+              <a href="teens.html">Accesories</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">TEENS</a>
+            <div class="dropdown-content">
+              <a href="teens.html">Teen Boy</a>
+              <a href="teens.html">Teen Girls</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">KIDS</a>
+            <div class="dropdown-content">
+              <a href="teens.html">Girls</a>
+              <a href="teens.html">Boys</a>
+              <a href="teens.html">New Born</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
+
+      <div class="sideNav" id="toggleBar">
+        <div class="navItem">
+          <a class="navLink" id="MDrop" onclick="MDrop(),CWDrop(),CTDrop(),CKDrop()" href="#">MEN</a>
+          <div class="sideDrop">
+            <div class="overline"></div>
+            <div class=""><a href="teens.html">New Now</a></div>
+            <div class=""><a href="teens.html">Clothing</a></div>
+            <div class=""><a href="teens.html">Accesories</a></div>
+          </div>
+        </div>
+        <div class="navItem">
+          <a class="navLink" id="WDrop" onclick="WDrop(),CMDrop(),CTDrop(),CKDrop()" href="#">WOMEN</a>
+          <div class="sideDrop">
+            <div class="overline"></div>
+            <div class=""><a href="teens.html">New Now</a></div>
+            <div class=""><a href="teens.html">Clothing</a></div>
+            <div class=""><a href="teens.html">Accesories</a></div>
+          </div>
+        </div>
+        <div class="navItem">
+          <a class="navLink" id="TDrop" onclick="TDrop(),CWDrop(),CMDrop(),CKDrop()" href="#">TEEN</a>
+          <div class="sideDrop">
+            <div class="overline"></div>
+            <div class=""><a href="teens.html">Teen Boys</a></div>
+            <div class=""><a href="teens.html">Teen Girls</a></div>
+          </div>
+        </div>
+        <div class="navItem">
+          <a class="navLink" id="KDrop" onclick="KDrop(),CWDrop(),CMDrop(),CTDrop()" href="#">KIDS</a>
+          <div class="sideDrop">
+            <div class="overline"></div>
+            <div class=""><a href="teens.html">Girls</a></div>
+            <div class=""><a href="teens.html">Boys</a></div>
+            <div class=""><a href="teens.html">New Born</a></div>
+          </div>
+        </div>
+        <div class="underline"></div>
+        <div class="sidebtn">
+          <!-- <a href="#">LogIn/SignUp</a> -->
+          <a href="#">About Us</a>
+        </div>
+        <div class="sideLogo"><a href="index.html" class="logo">LOGO</a></div>
+      </div>
+
 
 
     <div class="container">
-
-        <!-- <div class="navbar">
+        <div class="navbar">
             <div class="container nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
                 <div class="hamburger-lines">
@@ -112,7 +156,8 @@
                     <li><a href="#" onclick="completed_order()">Completed Orders</a></li>
                 </div>
             </div>
-        </div> -->
+        </div>
+
 
         <div class="leftside">
 
@@ -861,7 +906,7 @@
         </div>
 
     </div>
-
+</div>
     <footer class="footer" id="footer" style="clear: left;">
         <div class="containers">
             <div class="rows">
@@ -929,8 +974,94 @@
         </div>
     </footer>
 
-    <script>
 
+    <script src="./scripts/dashboard.js" ></script>
+    <script type="text/javascript">
+
+        function openSideNav(){
+            document.getElementById("toggleBar").classList.add("activee");
+            document.getElementById("open").classList.add("notActive");
+            document.getElementById("close").classList.add("activeee");
+        }
+
+        function closeSideNav(){
+            document.getElementById("toggleBar").classList.remove("activee");
+            document.getElementById("close").classList.remove("activeee");
+            document.getElementById("open").classList.remove("notActive");
+        }
+
+        function MDrop(){
+            document.getElementById("MDrop").classList.add("drp");
+        }
+        function CMDrop(){
+            document.getElementById("MDrop").classList.remove("drp");
+        }
+        function WDrop(){
+            document.getElementById("WDrop").classList.add("drp");
+        }
+        function CWDrop(){
+            document.getElementById("WDrop").classList.remove("drp");
+        }
+        function TDrop(){
+            document.getElementById("TDrop").classList.add("drp");
+        }
+        function CTDrop(){
+            document.getElementById("TDrop").classList.remove("drp");
+        }
+        function KDrop(){
+            document.getElementById("KDrop").classList.add("drp");
+        }
+        function CKDrop(){
+            document.getElementById("KDrop").classList.remove("drp");
+        }
+
+        document.querySelector("#searchbox").addEventListener("blur", function(){
+            document.getElementById("searching").classList.remove("min-search");
+            document.getElementById("search").style.display = "inline-block";
+            document.getElementById("wish").style.display = "inline-block";
+            document.getElementById("cart").style.display = "inline-block";
+            document.getElementById("user").style.display = "inline-block";
+        });
+
+        document.querySelector("#search").addEventListener("click",function(){
+            document.getElementById("searching").classList.add("min-search");
+            document.getElementById("search").style.display = "none";
+            document.getElementById("wish").style.display = "none";
+            document.getElementById("cart").style.display = "none";
+            document.getElementById("user").style.display = "none";
+        });
+
+
+
+
+        document.querySelector("#user").addEventListener("click", function(){
+            if (document.getElementById("user-drop").classList.contains("dropdis")) {
+                window.onclick=document.getElementById("user-drop").classList.remove("dropdis");
+            }
+            else{
+                document.getElementById("user-drop").classList.add("dropdis");
+            }
+        });
+
+        window.onclick = function(event) {
+
+
+            if (event.target.id !=='user') {
+
+                var dropdowns =
+                document.getElementById("user-drop");
+
+                if (dropdowns.classList.contains('dropdis')) {
+                    dropdowns.classList.remove('dropdis');
+                }
+                console.log(event.target.id)
+            }
+
+        }
+        </script>
+
+
+    <script>
         function Profile() {
             document.getElementById("profile").style.display = "block";
             document.getElementById("product").style.display = "none";
@@ -1182,28 +1313,6 @@
 
             }
         }
-
-
-
-
-
-
-//         function on() {
-//       document.getElementById("overlay").style.display = "block";
-//     }
-
-//     function off() {
-//       document.getElementById("overlay").style.display = "none";
-//     }
-
-
-//     Edit Profile Details Script
-// function openPersonalModal(){
-//     document.getElementById('addresModalCardd').classList.add('addressCardActive');
-//     getProfileDetails();
-// }
-
-
     </script>
     <script src="https://kit.fontawesome.com/50fcb25c1f.js" crossorigin="anonymous"></script>
 
